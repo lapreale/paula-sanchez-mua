@@ -1,0 +1,256 @@
+<!-- Servicios Detalle y Secundarios -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Paula Sánchez Make Up Artist - Servicios</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f9f7f5", /* Slightly warmed up from the default config for the beige request */
+                        "background-dark": "#221015",
+                        "surface-beige": "#f0ebe6",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom subtle fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#181113] dark:text-gray-100 antialiased selection:bg-primary/30">
+    <!-- Main Container -->
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-24">
+        <!-- Top Header -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 transition-all duration-300">
+            <div
+                class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </div>
+            <h1 class="text-lg font-bold tracking-tight uppercase flex flex-col items-start leading-none">
+                <span>Paula Sánchez</span>
+                <span class="text-[0.6em] font-light tracking-[0.2em] opacity-70">Make Up Artist</span>
+            </h1>
+            <div
+                class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-2xl">search</span>
+            </div>
+        </header>
+        <!-- Hero Section: El Diferencial -->
+        <section class="flex flex-col px-6 pt-8 pb-12 animate-fade-in">
+            <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase mb-3 block">Filosofía</span>
+            <h2 class="text-4xl md:text-5xl font-light leading-[1.1] mb-6">
+                El <span class="font-bold italic">Diferencial</span>
+            </h2>
+            <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden mb-8 shadow-sm">
+                <div class="absolute inset-0 bg-cover bg-center"
+                    data-alt="Artistic close-up portrait of a woman with natural glowing makeup and dramatic lighting"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUgNH_viHhRotdR5sM0sibT3_7698v6dSXKR7a-CRroWoJZby3IpDIBbKJom7AID2qrIVdQMpv_3DY0Fj7KgzR8sdPCOzfPY62LpcGPSTyhNYMSmJei-yCajcbiVWHTnRolUmwUkiafmcNC7o9e9mUHydZvNfpSo1rfg_J9-TaGQQAlSzhwI6RtWE3mraoUF1UY8kLtOU5OGgkZQemQBKCtzifu8jOTsyQMze6C9Zd067AtDRfzgBm3hl3Cwtj5vKTRwxlM7G9avU');">
+                </div>
+                <!-- Overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+            <p class="text-lg md:text-xl font-normal leading-relaxed text-gray-800 dark:text-gray-200">
+                Más que maquillaje. Entiendo la luz, la cámara y el escenario para que brilles en cada ángulo. Un
+                enfoque <span class="border-b border-primary/40 pb-0.5">editorial y minimalista</span> para resaltar tu
+                belleza natural.
+            </p>
+        </section>
+        <!-- Divider -->
+        <div class="w-full flex justify-center py-4">
+            <div class="h-px w-24 bg-gray-300 dark:bg-gray-700"></div>
+        </div>
+        <!-- Secondary Services Section -->
+        <section class="flex flex-col px-4 pt-8 pb-4 space-y-12">
+            <div class="px-2 animate-fade-in delay-100">
+                <h3 class="text-2xl font-bold mb-1">Servicios Exclusivos</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Experiencias diseñadas para cada momento.</p>
+            </div>
+            <!-- Service Card: Quinceañeras -->
+            <a href="reserva.html" class="group flex flex-col gap-4 animate-fade-in delay-200">
+                <div class="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-surface-beige dark:bg-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Young woman in elegant dress smiling softly, natural light"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgBWVyd6-e6QfyoPQDcOJfJmYRhzmMhBn1aeFQDb-BpqXKUaGCgk9gKT1MtL0imCI9cwDPj-IXWGQ0sNY0mMfQf33bBiO9ktiWzvfY_O5nnx378EEFnJNGQ53MBi_iNjQs2BPSzZ4QLmkvvhCwK9yOn7WpdNp-fhrEca-nmsVWBudKfC2ukkLXg7mU7hwdeoHt8ETDbGBAndsb7_2ZM1Yhci73WhSyXKA8AGFbx8gHCczrgvBONTJQJn2H2HIHlcf5ncA8n-HUe_I');">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Quinceañeras</h4>
+                        <span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300 line-clamp-2">
+                        Looks frescos y atemporales que capturan tu esencia juvenil con un toque de sofisticación
+                        editorial.
+                    </p>
+                </div>
+            </a>
+            <!-- Service Card: Eventos Sociales -->
+            <a href="reserva.html" class="group flex flex-col gap-4 animate-fade-in delay-200">
+                <div class="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-surface-beige dark:bg-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Glamorous evening makeup look with gold accents"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTaszliKodxAl_JuUVTZ1LqrZ-5meVfiZmZp0AUDH35gxHZ_Enn7xWyWyz5iKVL08Y5p2TQKM0RrBlmfpMnqgjdgGY9pNRHKbegqNzkuCBzTfZ9rSWot_rT86WcAPcyVEL1rdAlybDFfwfkq2Gz_KStTiy0z4-uM9r_LakRNPtmuelyGob82cmmU6h-_EPKaS5DyRMhmFA7JIW3bTHtzTug_d8I2ESRX9QIOMzMumQp1ibmao4laPoOWT9TRUssu6ZquMvCnf5-zs');">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Eventos Sociales</h4>
+                        <span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300 line-clamp-2">
+                        Prepárate para la alfombra roja. Maquillaje de larga duración perfecto para bodas, galas y
+                        celebraciones.
+                    </p>
+                </div>
+            </a>
+            <!-- Service Card: Clases de Maquillaje -->
+            <a href="reserva.html" class="group flex flex-col gap-4 animate-fade-in delay-300">
+                <div class="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-surface-beige dark:bg-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Makeup artist teaching techniques with brushes and palette"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs4uVogNb-W7Qgx9bHFLJHX1GC9m9pRpGRxSacnEtMLf-gQNe05aWUxR6-U57YNfRlzKiEGIyhpnW5n_VxtA3lXdp15QI8_qOEV_Ftk1xEnx3Y3K6pxMheY2IVd5-cWZjoR_rH2faJxGHrOTZN57LC_U2Ug9EhvIbjuYROofRSufdOfKaVM4mAfvBqIakwusUOUuByI5zz7CKoDE5MJbHUg3dupf-QLqvnRtxZ72GzHftfqL8Yjj0qfA-zJn2X5yuVNhP7uXIaf6E');">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Clases de Maquillaje</h4>
+                        <span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300 line-clamp-2">
+                        Aprende a dominar tus propios rasgos. Técnicas profesionales simplificadas para tu rutina
+                        diaria.
+                    </p>
+                </div>
+            </a>
+            <!-- Service Card: Body Tan -->
+            <a href="reserva.html" class="group flex flex-col gap-4 animate-fade-in delay-300">
+                <div class="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-surface-beige dark:bg-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Close up of golden bronze skin texture with soft lighting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvTvD489TE6SlduUdhnEA3H4F8b7GBjTcoYOBXGOj_K69wmNficmIbKnsXBKqYq1n5Tw-yykcpmoaQEQig_ZR8dlDXkRycULh4Fks3IlmMNO6LfwcankgLQC8wJPU8LtRvziimMAPZCWeYmd7WrCLCuA7t1H4e4SCAtktyPQOQfOeVr1NebCt7PSFp5dhDfOKBX2M03iYYTf4aSzv7qj7xSJ13118zREKauQEO9o_9oWfdhKNiG4voSG73VcBXrMFA_Mkdi1g-Kvw');">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Body Tan / Spray Tan</h4>
+                        <span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300 line-clamp-2">
+                        El bronceado perfecto sin sol. Un acabado dorado natural y uniforme que cuida tu piel.
+                    </p>
+                </div>
+            </a>
+        </section>
+        <!-- CTA Section -->
+        <div class="px-6 py-8 pb-12 mb-20 animate-fade-in delay-300">
+            <div
+                class="bg-surface-beige dark:bg-white/5 rounded-xl p-8 text-center border border-stone-200 dark:border-stone-800">
+                <h3 class="text-xl font-bold mb-2">¿Lista para brillar?</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Agenda tu cita y diseñemos el look perfecto
+                    para ti.</p>
+                <a href="reserva.html"
+                    class="w-full bg-primary text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all active:scale-95 uppercase tracking-wide text-sm block">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+        <!-- Bottom Navigation -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-[#1a0c10]/95 backdrop-blur-lg border-t border-stone-100 dark:border-stone-800 pb-safe pt-2 px-2 z-50 shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+            <div class="flex justify-between items-center max-w-md mx-auto">
+                <a class="flex flex-col items-center justify-center w-full py-2 group" href="index.html">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">home</span>
+                    <span class="text-[10px] font-medium mt-1 text-gray-400 group-hover:text-primary">Inicio</span>
+                </a>
+                <a class="flex flex-col items-center justify-center w-full py-2 group" href="servicios.html">
+                    <span
+                        class="material-symbols-outlined text-primary transition-colors text-[24px] font-variation-settings-fill">spa</span>
+                    <span class="text-[10px] font-bold mt-1 text-primary">Servicios</span>
+                </a>
+                <a class="flex flex-col items-center justify-center w-full py-2 group" href="portafolio.html">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">photo_library</span>
+                    <span class="text-[10px] font-medium mt-1 text-gray-400 group-hover:text-primary">Portafolio</span>
+                </a>
+                <a class="flex flex-col items-center justify-center w-full py-2 group" href="#">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">favorite</span>
+                    <span class="text-[10px] font-medium mt-1 text-gray-400 group-hover:text-primary">Testimonios</span>
+                </a>
+                <a class="flex flex-col items-center justify-center w-full py-2 group" href="reserva.html">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">mail</span>
+                    <span class="text-[10px] font-medium mt-1 text-gray-400 group-hover:text-primary">Contacto</span>
+                </a>
+            </div>
+        </nav>
+        <!-- Safe area spacer for bottom nav -->
+        <div class="h-6"></div>
+    </div>
+    <script>
+        // Simple script to support safe-area-inset-bottom visualization if needed, 
+        // though usually handled by OS. Adding inline style for padding-bottom in nav.
+        const nav = document.querySelector('nav');
+        if (nav) {
+            nav.style.paddingBottom = "calc(0.5rem + env(safe-area-inset-bottom))";
+        }
+    </script>
+</body>
+
+</html>

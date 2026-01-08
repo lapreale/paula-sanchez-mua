@@ -1,0 +1,463 @@
+<!-- Inicio: Hero y Servicios Principales -->
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Paula Sánchez Make Up Artist</title>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind Config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b5b",
+            "primary-soft": "#f4e6e9",
+            "background-light": "#fbf9f6", /* Adjusted to a warmer champagne/beige tone */
+            "background-dark": "#221015",
+            "text-dark": "#181113",
+            "gold-accent": "#C5A059",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .font-serif-editorial {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-dark antialiased">
+  <div class="relative flex h-auto w-full flex-col overflow-x-hidden">
+    <!-- Mobile Header (Transparent/Overlay) -->
+    <header
+      class="fixed top-0 left-0 w-full z-40 p-6 flex justify-between items-start bg-gradient-to-b from-black/40 to-transparent pointer-events-none">
+      <button class="pointer-events-auto text-white hover:text-primary transition-colors duration-300 group">
+        <span class="material-symbols-outlined !text-[32px]">menu</span>
+      </button>
+      <!-- Optional Logo Mark for Context -->
+      <div class="hidden opacity-0 pointer-events-none transition-opacity duration-300" id="scroll-logo">
+        <span class="font-serif-editorial font-bold text-white tracking-widest text-lg">PS</span>
+      </div>
+    </header>
+    <!-- Drawer Menu (Hidden state implementation for structure completeness) -->
+    <div id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div id="mobile-drawer"
+        class="absolute left-0 top-0 h-full w-3/4 max-w-[300px] bg-[#fbf9f6] p-8 shadow-2xl flex flex-col justify-between transform -translate-x-full transition-transform duration-300">
+        <button id="close-menu" class="absolute top-6 right-6 text-text-dark hover:text-primary transition-colors">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <ul class="flex flex-col gap-6 mt-12">
+          <li class="cursor-pointer group">
+            <a href="index.html"
+              class="font-serif-editorial text-2xl text-text-dark font-medium group-hover:text-primary transition-colors">Inicio</a>
+            <div class="h-[1px] w-0 bg-primary group-hover:w-8 transition-all duration-300 mt-1"></div>
+          </li>
+          <li class="cursor-pointer group">
+            <a href="servicios.html"
+              class="font-serif-editorial text-2xl text-text-dark font-medium group-hover:text-primary transition-colors">Servicios</a>
+          </li>
+          <li class="cursor-pointer group">
+            <a href="portafolio.html"
+              class="font-serif-editorial text-2xl text-text-dark font-medium group-hover:text-primary transition-colors">Portafolio</a>
+          </li>
+          <li class="cursor-pointer group">
+            <a href="#"
+              class="font-serif-editorial text-2xl text-text-dark font-medium group-hover:text-primary transition-colors">Testimonios</a>
+          </li>
+          <li class="cursor-pointer group">
+            <a href="reserva.html"
+              class="font-serif-editorial text-2xl text-text-dark font-medium group-hover:text-primary transition-colors">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const menuBtn = document.querySelector('header button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const closeBtn = document.getElementById('close-menu');
+
+      function openMenu() {
+        mobileMenu.classList.remove('hidden');
+        // Small delay to allow display:block to apply before opacity transition
+        setTimeout(() => {
+          mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+          mobileDrawer.classList.remove('-translate-x-full');
+        }, 10);
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        mobileDrawer.classList.add('-translate-x-full');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) closeMenu();
+      });
+    </script>
+    <!-- Hero Section -->
+    <section
+      class="relative h-[95vh] w-full bg-background-dark flex flex-col items-center justify-end pb-12 overflow-hidden">
+      <!-- Background Image -->
+      <!-- Background Image Slider -->
+      <div class="absolute inset-0 z-0 select-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 z-10"></div>
+        <div class="absolute inset-0 bg-[#4a3b32]/20 mix-blend-multiply z-10"></div>
+
+        <!-- Slider Images -->
+        <div id="hero-slider" class="relative h-full w-full">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-1000 opacity-100"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBzrKRx2fq4DlF7nuj73Mf6HFtcXXRsNSo9rsCEyJ4CzP3Ry1_slAhfADoZKHSCzLCsoTzWUY4MGgcw1U_67wn9AIlLDQAMQpd74wxQNpk4WNFcAmQgx4IqRdr2jfNXukpW7Gbn1EW9HzGOB6EmZYC2oYymlybMPmYF1p4sMJ9K5dw2TlU6grEh-_5J1v11K0qAXg9WJDsDqG89-uvosHKZFGZZ-TUcQle4a_0Zak93Lexi0U9g7iiGMonwEwSiUYBRk9zGc0o33E"
+            alt="Bride 1">
+          <img class="absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-1000 opacity-0"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE8fDorOa_P1Prg78FNsitrxQ6w9O7W8qVCoG8DsrySzGqF5HnZ4os5TIRBesyZlytB2J_zAUCczdD3-o3JSvl4OtH08cQ6HurxLb6I6C0-Qy-81FcBsqHx5faxuHoFKK3gqnxgmvYPjAI7j7natpevGcM9S8DrMOyuLPAkqpdOfWmgkAlL3cobz6mPrLQ2BPGzmDEzRGJPChKRdS2boVYlonvwc20nAyllsQgVWlZnz2DGXxj5ycOGKSKpMOAOE3c4C-3A_TIkYk"
+            alt="Bride 2">
+          <img class="absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-1000 opacity-0"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvTvD489TE6SlduUdhnEA3H4F8b7GBjTcoYOBXGOj_K69wmNficmIbKnsXBKqYq1n5Tw-yykcpmoaQEQig_ZR8dlDXkRycULh4Fks3IlmMNO6LfwcankgLQC8wJPU8LtRvziimMAPZCWeYmd7WrCLCuA7t1H4e4SCAtktyPQOQfOeVr1NebCt7PSFp5dhDfOKBX2M03iYYTf4aSzv7qj7xSJ13118zREKauQEO9o_9oWfdhKNiG4voSG73VcBXrMFA_Mkdi1g-Kvw"
+            alt="Model">
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="relative z-20 flex flex-col items-center text-center px-6 max-w-md animate-[fadeIn_1s_ease-out]">
+        <h1 class="flex flex-col items-center text-white mb-6 drop-shadow-lg">
+          <span class="font-serif-editorial text-5xl md:text-7xl font-normal leading-tight tracking-wide">
+            PAULA <span class="font-light italic">SÁNCHEZ</span>
+          </span>
+          <span class="text-sm md:text-lg font-medium tracking-[0.3em] uppercase mt-2 opacity-90">
+            Make Up Artist
+          </span>
+        </h1>
+        <div class="w-12 h-[1px] bg-white/60 mb-6"></div>
+        <h2 class="text-white/90 text-sm md:text-base font-light leading-relaxed tracking-wide mb-10 max-w-[280px]">
+          Looks pensados para momentos que se viven en directo y se recuerdan para siempre.
+        </h2>
+        <a href="reserva.html"
+          class="relative overflow-hidden bg-primary hover:bg-[#d6204b] text-white text-sm font-bold tracking-[0.1em] uppercase py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform active:scale-95 group">
+          <span class="relative z-10">Consultar disponibilidad</span>
+          <div
+            class="absolute inset-0 h-full w-full scale-0 rounded-full transition-all duration-300 group-hover:scale-100 group-hover:bg-white/10">
+          </div>
+        </a>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-4 z-20 animate-bounce">
+        <span class="material-symbols-outlined text-white/50 text-3xl">keyboard_arrow_down</span>
+      </div>
+    </section>
+    <!-- Services Introduction & Header -->
+    <div class="pt-16 pb-8 px-6 text-center bg-background-light">
+      <h3 class="font-serif-editorial text-3xl text-text-dark mb-2">Servicios</h3>
+      <p class="text-text-dark/60 text-sm max-w-xs mx-auto mb-6">Experiencias de belleza diseñadas a tu medida.</p>
+      <a href="servicios.html"
+        class="text-primary text-xs font-bold tracking-widest uppercase border-b border-primary pb-1 inline-block hover:text-[#d6204b] transition-colors">
+        Ver todos los servicios
+      </a>
+    </div>
+    <!-- Service Cards Section -->
+    <section class="flex flex-col w-full bg-background-light pb-8 px-4 gap-4 md:px-6">
+      <!-- BODAS Card -->
+      <a href="bodas.html"
+        class="group relative w-full h-[500px] rounded-t-[4rem] rounded-b-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500">
+        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+        <img alt="Close up of bridal makeup detail with soft lighting"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          data-alt="Close up of bridal makeup detail with soft lighting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE8fDorOa_P1Prg78FNsitrxQ6w9O7W8qVCoG8DsrySzGqF5HnZ4os5TIRBesyZlytB2J_zAUCczdD3-o3JSvl4OtH08cQ6HurxLb6I6C0-Qy-81FcBsqHx5faxuHoFKK3gqnxgmvYPjAI7j7natpevGcM9S8DrMOyuLPAkqpdOfWmgkAlL3cobz6mPrLQ2BPGzmDEzRGJPChKRdS2boVYlonvwc20nAyllsQgVWlZnz2DGXxj5ycOGKSKpMOAOE3c4C-3A_TIkYk" />
+        <div class="relative z-20 h-full flex flex-col items-center justify-center text-center p-6">
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-xl transform transition-transform duration-500 group-hover:-translate-y-2">
+            <h3 class="font-serif-editorial text-3xl text-white tracking-wider mb-2">BODAS</h3>
+            <div class="w-8 h-[1px] bg-white/80 mx-auto mb-3"></div>
+            <p
+              class="text-white/90 text-xs font-medium tracking-widest uppercase opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-75">
+              Novias &amp; Invitadas
+            </p>
+          </div>
+          <div
+            class="absolute bottom-8 right-8 bg-white text-text-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-lg">
+            <span class="material-symbols-outlined block">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+      <!-- EVENTOS PROFESIONALES Card -->
+      <a href="servicios.html"
+        class="group relative w-full h-[500px] rounded-t-[4rem] rounded-b-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 mt-2">
+        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+        <img alt="High fashion editorial makeup look in a studio setting"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          data-alt="High fashion editorial makeup look in a studio setting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmbL_EAFu2z3G7mzwYs-BU4LSF4SVgocm4-Jn3CA4-Mvi2dTdb_wNgiWvLueC2ak53RmZHdL65izao8uoerowTC-6rOjOdUs0_2D9KGNcqM0wz2IexecBDGUoe64-ZcaMfrobExOsbdMOU9HCNFYlrUBJd5KioGQcPQWsBP3Tle78a6T3RFHOVeyIl9XNYp6Phan-6MU2-88eYElI_ZDF-KIrqIAHdgoC4rZxuR5n_wEIdQdBO9zIzrWN-SwHmMexEXM_ZosKqMk" />
+        <div class="relative z-20 h-full flex flex-col items-center justify-center text-center p-6">
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-xl transform transition-transform duration-500 group-hover:-translate-y-2">
+            <h3
+              class="font-serif-editorial text-3xl text-white tracking-wider mb-2 text-wrap w-full max-w-[200px] leading-tight">
+              EVENTOS <br /> <span class="text-2xl italic">Profesionales</span></h3>
+            <div class="w-8 h-[1px] bg-white/80 mx-auto mb-3 mt-2"></div>
+            <p
+              class="text-white/90 text-xs font-medium tracking-widest uppercase opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-75">
+              Editorial &amp; Moda
+            </p>
+          </div>
+          <div
+            class="absolute bottom-8 right-8 bg-white text-text-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-lg">
+            <span class="material-symbols-outlined block">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- Portfolio Preview Section -->
+    <section class="py-16 px-6 bg-[#f4f1ed]">
+      <div class="flex flex-col items-center text-center mb-10">
+        <h3 class="font-serif-editorial text-3xl text-text-dark mb-4">Portafolio</h3>
+        <p class="text-text-dark/60 text-sm max-w-xs mx-auto">
+          Una colección de momentos reales y belleza atemporal.
+        </p>
+      </div>
+
+      <!-- 2x2 Grid -->
+      <div class="grid grid-cols-2 gap-3 mb-10 max-w-4xl mx-auto">
+        <div class="aspect-[4/5] rounded-lg overflow-hidden">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNScNE_i4Cynp7kq-iueqWfAK7E-631Ix1033TI1M_3C-pcnB31GVppvxQX7s752BBxYdIypJWLT9BWvfowJcY0HaxGcaUYuuoOqz0sA0cosD5S1PrEDmg_6CKfgQTimGdRwd5W4HLJLN4CsrpqJAZmF1A8u4DaO1uYVgElWFnEGwhkuJgUS-VimVmAVQVeuSofpdnkgVFqloF_3lmG1SoQori2jqtnTG65DUdPreWaVJ7Tk-_dMxnlVk9z7SPmeo-6ar4_Pc6AK0"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Bridal makeup">
+        </div>
+        <div class="aspect-[4/5] rounded-lg overflow-hidden mt-8">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvTvD489TE6SlduUdhnEA3H4F8b7GBjTcoYOBXGOj_K69wmNficmIbKnsXBKqYq1n5Tw-yykcpmoaQEQig_ZR8dlDXkRycULh4Fks3IlmMNO6LfwcankgLQC8wJPU8LtRvziimMAPZCWeYmd7WrCLCuA7t1H4e4SCAtktyPQOQfOeVr1NebCt7PSFp5dhDfOKBX2M03iYYTf4aSzv7qj7xSJ13118zREKauQEO9o_9oWfdhKNiG4voSG73VcBXrMFA_Mkdi1g-Kvw"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            alt="Skin texture detail">
+        </div>
+        <div class="aspect-[4/5] rounded-lg overflow-hidden -mt-8">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmbL_EAFu2z3G7mzwYs-BU4LSF4SVgocm4-Jn3CA4-Mvi2dTdb_wNgiWvLueC2ak53RmZHdL65izao8uoerowTC-6rOjOdUs0_2D9KGNcqM0wz2IexecBDGUoe64-ZcaMfrobExOsbdMOU9HCNFYlrUBJd5KioGQcPQWsBP3Tle78a6T3RFHOVeyIl9XNYp6Phan-6MU2-88eYElI_ZDF-KIrqIAHdgoC4rZxuR5n_wEIdQdBO9zIzrWN-SwHmMexEXM_ZosKqMk"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Editorial look">
+        </div>
+        <div class="aspect-[4/5] rounded-lg overflow-hidden">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTaszliKodxAl_JuUVTZ1LqrZ-5meVfiZmZp0AUDH35gxHZ_Enn7xWyWyz5iKVL08Y5p2TQKM0RrBlmfpMnqgjdgGY9pNRHKbegqNzkuCBzTfZ9rSWot_rT86WcAPcyVEL1rdAlybDFfwfkq2Gz_KStTiy0z4-uM9r_LakRNPtmuelyGob82cmmU6h-_EPKaS5DyRMhmFA7JIW3bTHtzTug_d8I2ESRX9QIOMzMumQp1ibmao4laPoOWT9TRUssu6ZquMvCnf5-zs"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Evening makeup">
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="portafolio.html"
+          class="inline-block bg-white text-text-dark font-bold py-4 px-10 rounded-full shadow-md hover:shadow-lg transition-all uppercase text-xs tracking-widest border border-stone-200">
+          Ver Portafolio Completo
+        </a>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-16 px-6 bg-background-light">
+      <h3 class="font-serif-editorial text-3xl text-center text-text-dark mb-10">Testimonios</h3>
+      <div class="flex flex-col gap-6 max-w-lg mx-auto">
+        <!-- Review 1 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+          <div class="flex gap-1 text-primary mb-3">
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+          </div>
+          <p class="text-text-dark/80 text-sm italic leading-relaxed mb-4">"Paula tiene un don. Logró exactamente el
+            look natural que quería para mi boda. Me sentí yo misma pero más radiante que nunca."</p>
+          <div class="flex items-center gap-3">
+            <div class="size-8 rounded-full bg-stone-200 overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXsB7-AsHQVKz9G1iqK0O2MCxaNjAhXc6dfJYUjRTadszgO6Y4qNbu4sBoESb9utH9INHSO2Ts9hMyPWW1MdNSdq5sLZZCxxNzDV2OVtwt29f8xVy1Ff9G6O43h7YVjwMEa1V13mpasm21ZHcYjncwg8gNVqjQPREz5ajT08uHAl1RbgpRDarKnjtcPVgQDBlASWtlP21ZoQfrhgt-Sxn2pMIZZKw4_vbmz8GaN9zSzMgoScEnBpZqmh3USwPtF2yCZ0SEwxzi4oY"
+                class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-text-dark">Elena B.</span>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+          <div class="flex gap-1 text-primary mb-3">
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+            <span class="material-symbols-outlined text-sm">star</span>
+          </div>
+          <p class="text-text-dark/80 text-sm italic leading-relaxed mb-4">"Súper profesional y atenta. Me explicó cada
+            paso durante la clase de automaquillaje y ahora me siento mucho más segura."</p>
+          <div class="flex items-center gap-3">
+            <div class="size-8 rounded-full bg-stone-200 overflow-hidden">
+              <span class="flex items-center justify-center w-full h-full text-xs font-bold text-stone-500">MC</span>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-text-dark">María C.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form-section" class="py-16 px-6 bg-[#221015] text-white">
+      <div class="max-w-md mx-auto">
+        <div class="text-center mb-10">
+          <h3 class="font-serif-editorial text-3xl mb-2">Contacto Rápido</h3>
+          <p class="text-white/60 text-sm">¿Tienes alguna duda? Escríbeme.</p>
+        </div>
+
+        <form id="landing-contact-form" class="flex flex-col gap-4">
+          <div class="group">
+            <input type="text" id="landing-name" required placeholder="Tu Nombre"
+              class="w-full h-12 rounded-lg bg-white/5 border border-white/10 px-4 text-white placeholder:text-white/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+          </div>
+          <div class="group">
+            <input type="email" id="landing-email" required placeholder="Tu Email"
+              class="w-full h-12 rounded-lg bg-white/5 border border-white/10 px-4 text-white placeholder:text-white/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+          </div>
+          <div class="group">
+            <textarea id="landing-message" required rows="3" placeholder="Mensaje"
+              class="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full h-12 bg-primary hover:bg-[#d6204b] text-white font-bold rounded-lg shadow-lg hover:shadow-primary/30 transition-all uppercase text-sm tracking-widest mt-2">
+            Enviar Mensaje
+          </button>
+        </form>
+
+        <!-- Landing Success Message -->
+        <div id="landing-success"
+          class="hidden flex-col items-center justify-center p-8 bg-white/10 rounded-xl border border-white/10 text-center animate-fade-in">
+          <span class="material-symbols-outlined text-green-400 text-4xl mb-4">check_circle</span>
+          <h4 class="text-xl font-bold mb-2">¡Gracias!</h4>
+          <p class="text-white/80 text-sm">Tu mensaje ha sido enviado.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById('landing-contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        this.classList.add('hidden');
+        document.getElementById('landing-success').classList.remove('hidden');
+        document.getElementById('landing-success').classList.add('flex');
+      });
+    </script>
+
+    <!-- Footer Simple -->
+    <footer class="bg-background-light py-10 px-6 border-t border-[#e5e0dc]">
+      <div class="flex flex-col items-center gap-6">
+        <div class="flex gap-6 text-text-dark/60">
+          <a class="hover:text-primary transition-colors" href="#">Instagram</a>
+          <a class="hover:text-primary transition-colors" href="#">Email</a>
+        </div>
+        <p class="font-serif-editorial text-text-dark text-lg font-bold">PS</p>
+        <p class="text-xs text-text-dark/40 text-center">© 2024 Paula Sánchez Make Up Artist. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <style>
+    /* Custom Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+    // Hero Slider Logic
+    const slides = document.querySelectorAll('#hero-slider img');
+    let currentSlide = 0;
+
+    // Preload images to avoid glitches
+    window.addEventListener('load', () => {
+      // Start slider
+      setInterval(() => {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+      }, 5000); // Change every 5 seconds
+
+      // Scroll Animations Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, observerOptions);
+
+      // Target elements: sections, headings, cards
+      const animatedElements = document.querySelectorAll('section > div, section h3, .group, footer > div');
+      animatedElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+
+</html>

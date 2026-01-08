@@ -1,0 +1,406 @@
+<!-- Formulario de Reserva / Inquire -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Paula Sánchez Make Up Artist - Reserva</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10",
+                        "input-light": "#ffffff",
+                        "input-dark": "#2d2616",
+                        "border-light": "#e5e5e0",
+                        "border-dark": "#3d3420",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Hide native date picker icon to style custom one if needed, keeping simple for this constraint-free design */
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-[#F2F0E9] antialiased selection:bg-primary/30">
+    <!-- Mobile Container -->
+    <div
+        class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col overflow-x-hidden shadow-2xl bg-background-light dark:bg-background-dark">
+        <!-- Top App Bar -->
+        <header
+            class="sticky top-0 z-50 flex flex-col bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-border-dark">
+            <div class="flex items-center h-16 justify-between px-4">
+                <a href="index.html" aria-label="Go back"
+                    class="flex size-10 shrink-0 items-center justify-center text-[#181611] dark:text-[#F2F0E9] hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <div class="flex-1 flex justify-center">
+                    <div class="flex flex-col items-center leading-none">
+                        <p class="text-[#181611] dark:text-[#F2F0E9] tracking-[0.1em] text-sm font-bold uppercase">Paula
+                            Sánchez</p>
+                        <span
+                            class="text-[0.6em] text-[#181611]/70 dark:text-[#F2F0E9]/70 tracking-[0.2em] font-light uppercase mt-1">Make
+                            Up Artist</span>
+                    </div>
+                </div>
+                <div class="flex w-10 items-center justify-end">
+                    <button
+                        class="flex size-10 cursor-pointer items-center justify-center rounded text-[#181611] dark:text-[#F2F0E9] hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Hero / Title -->
+        <div class="px-6 pt-8 pb-4">
+            <h1 class="text-[#181611] dark:text-[#F2F0E9] tracking-tight text-4xl font-bold leading-[1.1] mb-4">
+                Reserva tu <br /> <span class="text-primary italic font-serif font-normal">Fecha</span>
+            </h1>
+            <p class="text-[#897f61] dark:text-[#aba388] text-base font-normal leading-relaxed">
+                Cuéntame sobre tu día especial. Por favor completa el formulario con el mayor detalle posible para
+                diseñar una experiencia única.
+            </p>
+        </div>
+        <!-- Form Start -->
+        <form action="#" class="flex flex-col gap-8 px-6 pb-12" method="POST">
+            <!-- Section: Personal Info -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-border-light dark:border-border-dark">
+                    <span class="material-symbols-outlined text-primary text-[20px]">person</span>
+                    <h3 class="text-[#181611] dark:text-[#F2F0E9] text-sm font-bold uppercase tracking-widest">Datos
+                        Personales</h3>
+                </div>
+                <div class="flex flex-col gap-4 pt-2">
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="fullname">Nombre Completo</label>
+                        <input required
+                            class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                            id="fullname" name="fullname" placeholder="Ej. Sofia Martínez" type="text" />
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="email">Email</label>
+                        <input required
+                            class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                            id="email" name="email" placeholder="nombre@ejemplo.com" type="email" />
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group relative">
+                            <label
+                                class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                                for="phone">Teléfono</label>
+                            <input required
+                                class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                id="phone" name="phone" placeholder="+34 000 000" type="tel" />
+                        </div>
+                        <div class="group relative">
+                            <label
+                                class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                                for="instagram">Instagram</label>
+                            <input
+                                class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                id="instagram" name="instagram" placeholder="@usuario" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section: Event Details -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-border-light dark:border-border-dark">
+                    <span class="material-symbols-outlined text-primary text-[20px]">event</span>
+                    <h3 class="text-[#181611] dark:text-[#F2F0E9] text-sm font-bold uppercase tracking-widest">El Evento
+                    </h3>
+                </div>
+                <div class="flex flex-col gap-4 pt-2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group relative">
+                            <label
+                                class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                                for="date">Fecha</label>
+                            <input required
+                                class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none"
+                                id="date" name="date" type="date" />
+                        </div>
+                        <div class="group relative">
+                            <label
+                                class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                                for="people">Nº Personas</label>
+                            <input
+                                class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                id="people" min="1" name="people" type="number" value="1" />
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="eventType">Tipo de Evento</label>
+                        <div class="relative">
+                            <select
+                                class="w-full h-12 appearance-none rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                id="eventType" name="eventType">
+                                <option disabled="" selected="" value="">Selecciona una opción</option>
+                                <option value="wedding">Boda / Novia</option>
+                                <option value="guest">Invitada</option>
+                                <option value="editorial">Editorial / Moda</option>
+                                <option value="professional">Corporativo</option>
+                                <option value="other">Otro</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section: Locations -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-border-light dark:border-border-dark">
+                    <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+                    <h3 class="text-[#181611] dark:text-[#F2F0E9] text-sm font-bold uppercase tracking-widest">Ubicación
+                    </h3>
+                </div>
+                <div class="flex flex-col gap-4 pt-2">
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="city">Ciudad</label>
+                        <input required
+                            class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                            id="city" name="city" placeholder="Ej. Madrid" type="text" />
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="prepLocation">Lugar de Preparación</label>
+                        <input
+                            class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                            id="prepLocation" name="prepLocation" placeholder="Hotel, Domicilio, Finca..."
+                            type="text" />
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="eventLocation">Lugar del Evento (si difiere)</label>
+                        <input
+                            class="w-full h-12 rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                            id="eventLocation" name="eventLocation" placeholder="Nombre de la finca o lugar"
+                            type="text" />
+                    </div>
+                </div>
+            </div>
+            <!-- Section: Details & Services -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-border-light dark:border-border-dark">
+                    <span class="material-symbols-outlined text-primary text-[20px]">brush</span>
+                    <h3 class="text-[#181611] dark:text-[#F2F0E9] text-sm font-bold uppercase tracking-widest">Detalles
+                    </h3>
+                </div>
+                <div class="flex flex-col gap-4 pt-2">
+                    <!-- Services Chips -->
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-2.5">Servicios
+                            de Interés</label>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="services" type="checkbox" value="makeup" />
+                                <div
+                                    class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-sm text-[#181611] dark:text-[#F2F0E9] peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all select-none">
+                                    Maquillaje
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="services" type="checkbox" value="hair" />
+                                <div
+                                    class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-sm text-[#181611] dark:text-[#F2F0E9] peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all select-none">
+                                    Peinado
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="services" type="checkbox" value="trial" />
+                                <div
+                                    class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-sm text-[#181611] dark:text-[#F2F0E9] peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all select-none">
+                                    Prueba
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="services" type="checkbox" value="touchups" />
+                                <div
+                                    class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark bg-input-light dark:bg-input-dark text-sm text-[#181611] dark:text-[#F2F0E9] peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all select-none">
+                                    Retoques
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="description">Descripción y Visión</label>
+                        <textarea
+                            class="w-full rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 py-3 text-base text-[#181611] dark:text-[#F2F0E9] placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                            id="description" name="description"
+                            placeholder="Cuéntame más sobre tu estilo, horarios o cualquier detalle importante..."
+                            rows="4"></textarea>
+                    </div>
+                    <div class="group relative">
+                        <label
+                            class="block text-xs font-medium text-[#897f61] dark:text-[#aba388] uppercase tracking-wide mb-1.5"
+                            for="referral">¿Cómo nos conociste?</label>
+                        <div class="relative">
+                            <select
+                                class="w-full h-12 appearance-none rounded-lg bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark px-4 text-base text-[#181611] dark:text-[#F2F0E9] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                id="referral" name="referral">
+                                <option disabled="" selected="" value="">Selecciona una opción</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="google">Google</option>
+                                <option value="friend">Recomendación</option>
+                                <option value="weddingplanner">Wedding Planner</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Disclaimer -->
+            <div class="py-4">
+                <p
+                    class="text-[#897f61] dark:text-[#aba388] text-sm italic font-light leading-relaxed text-center px-2">
+                    Todas las solicitudes son revisadas personalmente.<br />
+                    La disponibilidad se confirma por correo electrónico.
+                </p>
+            </div>
+            <!-- Submit Button -->
+            <button
+                class="w-full h-14 bg-primary hover:bg-[#d6a510] text-white font-bold text-lg rounded-lg shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
+                type="submit">
+                <span>Consultar Disponibilidad</span>
+                <span class="material-symbols-outlined text-[20px]">send</span>
+            </button>
+        </form>
+
+        <!-- Success Message (Hidden by default) -->
+        <div id="success-message"
+            class="hidden flex-col items-center justify-center px-6 py-12 text-center animate-fade-in">
+            <div class="size-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-green-600 text-4xl">check</span>
+            </div>
+            <h2 class="text-2xl font-bold text-[#181611] dark:text-[#F2F0E9] mb-4">¡Solicitud Enviada!</h2>
+            <p class="text-[#897f61] dark:text-[#aba388] text-base leading-relaxed mb-8">
+                Gracias <span id="confirm-name" class="font-bold"></span>, he recibido tu consulta.
+                <br><br>
+                Revisaré la disponibilidad para el <span id="confirm-date" class="font-bold"></span> y te responderé lo
+                antes posible a tu email.
+            </p>
+            <a href="index.html"
+                class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-white font-bold shadow-lg hover:bg-[#d6a510] transition-colors uppercase tracking-widest text-sm">
+                Volver al Inicio
+            </a>
+        </div>
+
+        <script>
+            document.querySelector('form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get values for dynamic success message
+                const name = document.getElementById('fullname').value;
+                const date = document.getElementById('date').value;
+
+                // Simple formatting for date if present
+                let formattedDate = "día de evento";
+                if (date) {
+                    const d = new Date(date);
+                    formattedDate = d.toLocaleDateString();
+                }
+
+                // Update success message
+                document.getElementById('confirm-name').textContent = name.split(' ')[0]; // First name
+                document.getElementById('confirm-date').textContent = formattedDate;
+
+                // UI Transition
+                this.classList.add('hidden'); // Hide form
+                document.getElementById('success-message').classList.remove('hidden'); // Show success
+                document.getElementById('success-message').classList.add('flex'); // Ensure flex display
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+        <!-- Footer -->
+        <footer class="flex flex-col items-center justify-center py-8 bg-white dark:bg-[#1a160d]">
+            <!-- Abstract decorative pattern -->
+            <div class="w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-6 opacity-50"
+                data-alt="Divider line gradient"></div>
+            <div class="flex gap-6 mb-4">
+                <a aria-label="Instagram"
+                    class="text-[#181611] dark:text-[#F2F0E9] hover:text-primary transition-colors" href="#">
+                    <!-- Replacing generic text with material icon representation for social media since specific icons aren't in font -->
+                    <span class="text-sm font-bold uppercase tracking-widest">IG</span>
+                </a>
+                <a aria-label="Email" class="text-[#181611] dark:text-[#F2F0E9] hover:text-primary transition-colors"
+                    href="#">
+                    <span class="text-sm font-bold uppercase tracking-widest">Email</span>
+                </a>
+            </div>
+            <p class="text-xs text-[#897f61] dark:text-[#aba388]">© 2024 Paula Sánchez Make Up Artist</p>
+        </footer>
+    </div>
+</body>
+
+</html>
