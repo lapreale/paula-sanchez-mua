@@ -83,8 +83,15 @@
     <div class="max-w-4xl mx-auto">
         <section class="relative h-[60vh] w-full flex items-end pb-12 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgBWVyd6-e6QfyoPQDcOJfJmYRhzmMhBn1aeFQDb-BpqXKUaGCgk9gKT1MtL0imCI9cwDPj-IXWGQ0sNY0mMfQf33bBiO9ktiWzvfY_O5nnx378EEFnJNGQ53MBi_iNjQs2BPSzZ4QLmkvvhCwK9yOn7WpdNp-fhrEca-nmsVWBudKfC2ukkLXg7mU7hwdeoHt8ETDbGBAndsb7_2ZM1Yhci73WhSyXKA8AGFbx8gHCczrgvBONTJQJn2H2HIHlcf5ncA8n-HUe_I"
-                    class="w-full h-full object-cover" alt="Quinceañera Makeup">
+                <!-- Quinceañeras Slider -->
+                <div id="quinceaneras-slider" class="relative h-full w-full">
+                    <img src="quince-1.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                        alt="Quinceañera Makeup 1">
+                    <img src="quince-2.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                        alt="Quinceañera Makeup 2">
+                </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             </div>
             <div class="relative z-10 px-6 text-center w-full animate-fade-in">
@@ -211,6 +218,22 @@
         </footer>
     </div>
     <script>
+        // Quinceañeras Hero Slider Logic
+        const quinSlides = document.querySelectorAll('#quinceaneras-slider img');
+        let currentQuinSlide = 0;
+
+        window.addEventListener('load', () => {
+            setInterval(() => {
+                quinSlides[currentQuinSlide].classList.remove('opacity-100');
+                quinSlides[currentQuinSlide].classList.add('opacity-0');
+
+                currentQuinSlide = (currentQuinSlide + 1) % quinSlides.length;
+
+                quinSlides[currentQuinSlide].classList.remove('opacity-0');
+                quinSlides[currentQuinSlide].classList.add('opacity-100');
+            }, 4000); // Change every 4 seconds
+        });
+
         function resetExtras() {
             const checkBoxes = document.querySelectorAll('input[name="extras"]');
             checkBoxes.forEach(cb => cb.checked = true);

@@ -83,8 +83,18 @@
     <div class="max-w-4xl mx-auto">
         <section class="relative h-[60vh] w-full flex items-end pb-12 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs4uVogNb-W7Qgx9bHFLJHX1GC9m9pRpGRxSacnEtMLf-gQNe05aWUxR6-U57YNfRlzKiEGIyhpnW5n_VxtA3lXdp15QI8_qOEV_Ftk1xEnx3Y3K6pxMheY2IVd5-cWZjoR_rH2faJxGHrOTZN57LC_U2Ug9EhvIbjuYROofRSufdOfKaVM4mAfvBqIakwusUOUuByI5zz7CKoDE5MJbHUg3dupf-QLqvnRtxZ72GzHftfqL8Yjj0qfA-zJn2X5yuVNhP7uXIaf6E"
-                    class="w-full h-full object-cover" alt="Clase de Maquillaje">
+                <!-- Slider Images -->
+                <div id="clases-slider" class="relative h-full w-full">
+                    <img src="clases-hero.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                        alt="Clase de Maquillaje 1">
+                    <img src="clases-1.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                        alt="Clase de Maquillaje 2">
+                    <img src="clases-2.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                        alt="Clase de Maquillaje 3">
+                </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             </div>
             <div class="relative z-10 px-6 text-center w-full animate-fade-in">
@@ -204,6 +214,23 @@
         </footer>
     </div>
     <script>
+        // Clases Hero Slider Logic
+        const clasesSlides = document.querySelectorAll('#clases-slider img');
+        let currentSlide = 0;
+
+        // Start slider after page load
+        window.addEventListener('load', () => {
+            setInterval(() => {
+                clasesSlides[currentSlide].classList.remove('opacity-100');
+                clasesSlides[currentSlide].classList.add('opacity-0');
+
+                currentSlide = (currentSlide + 1) % clasesSlides.length;
+
+                clasesSlides[currentSlide].classList.remove('opacity-0');
+                clasesSlides[currentSlide].classList.add('opacity-100');
+            }, 4000); // Change every 4 seconds
+        });
+
         function submitForm(event) {
             event.preventDefault();
             event.stopPropagation();

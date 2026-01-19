@@ -91,8 +91,15 @@
         <section class="relative h-[60vh] w-full flex items-end pb-12 overflow-hidden">
             <!-- Background -->
             <div class="absolute inset-0 z-0">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNScNE_i4Cynp7kq-iueqWfAK7E-631Ix1033TI1M_3C-pcnB31GVppvxQX7s752BBxYdIypJWLT9BWvfowJcY0HaxGcaUYuuoOqz0sA0cosD5S1PrEDmg_6CKfgQTimGdRwd5W4HLJLN4CsrpqJAZmF1A8u4DaO1uYVgElWFnEGwhkuJgUS-VimVmAVQVeuSofpdnkgVFqloF_3lmG1SoQori2jqtnTG65DUdPreWaVJ7Tk-_dMxnlVk9z7SPmeo-6ar4_Pc6AK0"
-                    class="w-full h-full object-cover" alt="Novia Paula Sánchez">
+                <!-- Bodas Slider -->
+                <div id="bodas-hero-slider" class="relative h-full w-full">
+                    <img src="bodas-1.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                        alt="Novia Paula Sánchez 1">
+                    <img src="bodas-2.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                        alt="Novia Paula Sánchez 2">
+                </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             </div>
 
@@ -373,6 +380,22 @@
     </div>
 
     <script>
+        // Bodas Hero Slider Logic
+        const bodasHeroSlides = document.querySelectorAll('#bodas-hero-slider img');
+        let currentBodasHeroSlide = 0;
+
+        window.addEventListener('load', () => {
+            setInterval(() => {
+                bodasHeroSlides[currentBodasHeroSlide].classList.remove('opacity-100');
+                bodasHeroSlides[currentBodasHeroSlide].classList.add('opacity-0');
+
+                currentBodasHeroSlide = (currentBodasHeroSlide + 1) % bodasHeroSlides.length;
+
+                bodasHeroSlides[currentBodasHeroSlide].classList.remove('opacity-0');
+                bodasHeroSlides[currentBodasHeroSlide].classList.add('opacity-100');
+            }, 4500); // Change every 4.5 seconds
+        });
+
         function resetExtras() {
             // Aggressive Upselling: Re-check items when switching packages
             const checkBoxes = document.querySelectorAll('input[name="extras"]');
